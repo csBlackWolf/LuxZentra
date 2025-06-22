@@ -8,18 +8,13 @@ body:
       value: |
         ✨ Thanks for your suggestion! Please describe as clearly as possible.
 
-    id: title
-    attributes:
-      label: Title of your Idea
-      placeholder: e.g., "Make teleportation cost dynamic"
-    validations:
-      required: true
   - type: textarea
     id: idea
     attributes:
       label: Detailed Description
     validations:
       required: true
+
   - type: textarea
     id: reason
     attributes:
