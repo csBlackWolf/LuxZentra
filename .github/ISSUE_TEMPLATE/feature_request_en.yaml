@@ -1,4 +1,4 @@
-name: Suggest an Enhancement
+name: [EN] Suggest an Enhancement
 description: Share an idea or suggestion for improving the server.
 title: "[SUGGESTION] Your idea here"
 labels: ["enhancement", "user suggestion"]
@@ -8,6 +8,7 @@ body:
       value: |
         ✨ Thanks for your suggestion! Please describe as clearly as possible.
   - type: input
+
     id: title
     attributes:
       label: Title of your Idea

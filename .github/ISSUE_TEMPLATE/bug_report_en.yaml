@@ -1,4 +1,4 @@
-name: Report a Bug
+name: [EN] Report a Bug
 description: Report a technical problem or server malfunction.
 title: "[BUG] Short description of the issue"
 labels: ["bug", "user report"]
