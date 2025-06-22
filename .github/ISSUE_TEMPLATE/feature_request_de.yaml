@@ -7,13 +7,6 @@ body:
     attributes:
       value: |
         ✨ Danke für deine Idee! Bitte beschreibe möglichst klar, was du dir vorstellst.
-  - type: input
-    id: title
-    attributes:
-      label: Titel deiner Idee
-      placeholder: z. B. "Teleport-Kosten dynamisch machen"
-    validations:
-      required: true
   - type: textarea
     id: idea
     attributes:
