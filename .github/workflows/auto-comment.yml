@@ -12,19 +12,17 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const markdown = `
-📞 **Thank you for contacting us!**  
-We have deployed a service lynx to deal with your issue. 🐾
-
-📞 **Vielen Dank für deine Meldung!**  
-Wir haben einen Service-Luchs ausgesandt, um dein Anliegen zu prüfen. 🦊
-
-![Support Lynx](https://raw.githubusercontent.com/csBlackWolf/minecraft-team/main/.github/assets/support_lynx_tiny.png)
-            `.trim();
-
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: markdown
+              body: [
+                "📞 **Thank you for contacting us!**  ",
+                "We have deployed a service lynx to deal with your issue. 🐾",
+                "",
+                "📞 **Vielen Dank für deine Meldung!**  ",
+                "Wir haben einen Service-Luchs ausgesandt, um dein Anliegen zu prüfen. 🦊",
+                "",
+                "![Support Lynx](https://raw.githubusercontent.com/csBlackWolf/minecraft-team/main/.github/assets/support_lynx_tiny.png)"
+              ].join("\n")
             });
