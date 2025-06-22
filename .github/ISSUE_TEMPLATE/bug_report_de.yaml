@@ -1,4 +1,4 @@
-name: [DE] Fehler melden
+name: (DE) Fehler melden
 description: Melde ein technisches Problem oder Fehlverhalten auf dem Server.
 title: "[BUG] Kurzbeschreibung des Problems"
 labels: ["bug", "user report"]
