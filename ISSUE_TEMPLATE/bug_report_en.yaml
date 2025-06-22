@@ -1,0 +1,57 @@
+name: Report a Bug
+description: Report a technical problem or server malfunction.
+title: "[BUG] Short description of the issue"
+labels: ["bug", "user report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        👋 Thanks for reporting a bug!
+        Please make sure you’ve read the [FAQ](https://github.com/<USER>/<REPO>/wiki/en/FAQ) – your issue may already be answered.
+  - type: input
+    id: summary
+    attributes:
+      label: Short Description
+      placeholder: e.g., "Teleportation charged money but failed"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Enter world "Farmwelt"
+        2. Execute /spawn
+        3. Get hit by a mob during countdown
+        4. Still teleported and money deducted
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      options:
+        - Main World (LuxZentra)
+        - Test Server (LuxProto)
+        - Farm World
+        - Other / Unknown
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots or Logs (optional)
+    validations:
+      required: false

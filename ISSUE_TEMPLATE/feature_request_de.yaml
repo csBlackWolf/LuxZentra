@@ -1,0 +1,28 @@
+name: Verbesserung vorschlagen
+description: Teile eine Idee oder Verbesserung für den Server.
+title: "[VORSCHLAG] Deine Idee hier"
+labels: ["enhancement", "user suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ✨ Danke für deine Idee! Bitte beschreibe möglichst klar, was du dir vorstellst.
+  - type: input
+    id: title
+    attributes:
+      label: Titel deiner Idee
+      placeholder: z. B. "Teleport-Kosten dynamisch machen"
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Deine Idee im Detail
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Warum ist das eine gute Idee?
+    validations:
+      required: false

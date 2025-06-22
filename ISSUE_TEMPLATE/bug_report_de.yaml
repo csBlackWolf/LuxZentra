@@ -1,0 +1,57 @@
+name: Fehler melden (Bug Report)
+description: Melde ein technisches Problem oder Fehlverhalten auf dem Server.
+title: "[BUG] Kurzbeschreibung des Problems"
+labels: ["bug", "user report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        👋 Danke, dass du einen Fehler melden möchtest!
+        Bitte stelle sicher, dass du das [FAQ](https://github.com/<USER>/<REPO>/wiki/de/FAQ) gelesen hast – vielleicht ist dein Problem dort schon beschrieben.
+  - type: input
+    id: summary
+    attributes:
+      label: Kurze Fehlerbeschreibung
+      placeholder: z. B. "Teleport funktioniert nicht, obwohl ich bezahlt habe"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zur Reproduktion
+      placeholder: |
+        1. Betrete die Welt "Farmwelt"
+        2. Versuche /spawn auszuführen
+        3. Werde während der Wartezeit von einem Mob getroffen
+        4. Werde trotzdem teleportiert und Geld wird abgezogen
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Erwartetes Verhalten
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Tatsächliches Verhalten
+    validations:
+      required: true
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Umgebung
+      options:
+        - Hauptwelt (LuxZentra)
+        - Testserver (LuxProto)
+        - Farmwelt
+        - Andere / unbekannt
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots oder Logauszug (optional)
+    validations:
+      required: false
