@@ -14,13 +14,13 @@ xhr.onreadystatechange = function() {
         // Redirect based on the country code
         switch(response.CountryCode) {
             case "DE":
-                window.location.replace("https://csblackwolf.github.io/LuxZentra/start_de.html");
+                window.location.replace("https://csblackwolf.github.io/LuxZentra/de/");
                 break;
             case "US":
-                window.location.replace("https://csblackwolf.github.io/LuxZentra/start_en.html");
+                window.location.replace("https://csblackwolf.github.io/LuxZentra/en/");
                 break;
             default:
-                window.location.replace("https://csblackwolf.github.io/LuxZentra/start_de.html");
+                window.location.replace("https://csblackwolf.github.io/LuxZentra/en/");
         }
     }
 };
