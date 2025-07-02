@@ -1,3 +1,34 @@
 <html>
-<h>Hello, World!</h>
+  <head>
+  <title>Select your language!</title>
+  <script type="text/javascript">
+    var defaultCountry = 'DE';
+var defaultSite = 'https://csblackwolf.github.io/LuxZentra/start_de.html';
+var otherSite = 'https://csblackwolf.github.io/LuxZentra/start_en.html')
+ .then(response => {
+   if (response.ok) {
+     return response.text();
+   } else {
+     throw new Error('HTTP Error ' + response.status);
+   }
+ })
+ .then(country => {
+   if (country == defaultCountry) {
+     // No action needed - already on the default site
+     console.log('Already on default site');
+   } else {
+     // Redirect rest of the world
+     console.log('Redirecting to country specific website');
+     window.location = otherSite;
+   }
+ })
+ .catch(function(error) {
+   // Network error
+   // Script blocked by browser extension
+   // 429 error (too many requests)
+   console.log(error);
+ });
+  </script>
+  </head>
+<h>Select your language!</h>
 </html>
