@@ -2,32 +2,30 @@
   <head>
   <title>Select your language!</title>
   <script type="text/javascript">
-    var defaultCountry = 'US';
-var defaultSite = 'https://csblackwolf.github.io/LuxZentra/start_de.html';
-var otherSite = 'https://csblackwolf.github.io/LuxZentra/start_en.html')
- .then(response => {
-   if (response.ok) {
-     return response.text();
-   } else {
-     throw new Error('HTTP Error ' + response.status);
-   }
- })
- .then(country => {
-   if (country == defaultCountry) {
-     // No action needed - already on the default site
-     console.log('Already on default site');
-   } else {
-     // Redirect rest of the world
-     console.log('Redirecting to country specific website');
-     window.location = otherSite;
-   }
- })
- .catch(function(error) {
-   // Network error
-   // Script blocked by browser extension
-   // 429 error (too many requests)
-   console.log(error);
- });
+var endpoint = 'https://apip.cc/json';
+var xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var response = JSON.parse(this.responseText);
+        if(response.status !== 'success') {
+            console.log('Query failed: ' + response.message);
+            return;
+        }
+        // Redirect based on the country code
+        switch(response.CountryCode) {
+            case "DE":
+                window.location.replace("https://csblackwolf.github.io/LuxZentra/start_de.html");
+                break;
+            case "US":
+                window.location.replace("https://csblackwolf.github.io/LuxZentra/start_en.html");
+                break;
+            default:
+                window.location.replace("https://csblackwolf.github.io/LuxZentra/start_de.html");
+        }
+    }
+};
+xhr.open('GET', endpoint, true);
+xhr.send();
   </script>
   </head>
 <h>Select your language!</h>
